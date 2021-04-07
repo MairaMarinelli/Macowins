@@ -6,6 +6,23 @@ using System.Threading.Tasks;
 
 namespace Macowins
 {
+    public enum ModoDePago:int
+    {
+        tarjeta =0,
+        efectivo =1
+    }
+    public enum TipoPrenda:int
+    {
+        camisa=0,
+        pantalon=1,
+        saco=2
+    }
+    public enum EstadoPrenda : int
+    {
+        nuevo=0,
+        promocion=1,
+        liquidacion=2
+    }
     public class MarcaMacowins
     {
         List<Sucursal> ListSucursales = new List<Sucursal>(); //Una lista que tiene todas las sucursales
@@ -13,25 +30,25 @@ namespace Macowins
         /* Suma las ganancias de todas las sucursales*/
         public float GananciasTotales()
         {
-            float a;
+            float a=0;
             return a;
         }
     }
     public class Sucursal
     {
-        List<Ventas> ListVentas = new List<Ventas>(); //tiene la informacion de las ventas de esa sucursal particular
-        List<Prendas> ListsucursalPrendas = new List<Prendas>(); //tiene la cantidad de prendas que tiene la sucursal
+        List<Venta> ListVentas = new List<Venta>(); //tiene la informacion de las ventas de esa sucursal particular
+        List<Prenda> ListsucursalPrendas = new List<Prenda>(); //tiene la cantidad de prendas que tiene la sucursal
         
         /* Suma el precio de la lista de las ventas */
         public float GananciasSucursal() 
         {
-            float a;
+            float a=0;
             return a;
         }
     }
-    public class Ventas
+    public class Venta
     {
-        List<Prendas> ListventaPrendas = new List<Prendas>(); //datos de las prendas que se vendieron 
+        List<Prenda> ListventaPrendas = new List<Prenda>(); //datos de las prendas que se vendieron 
         public string Fecha { get; set; }
         public int ModoDePago { get; set; } //enum
 
@@ -39,15 +56,15 @@ namespace Macowins
          precio dependiendo del estado de la prenda y le suma en caso de ser tarjeta, el recargo de las cuotas*/ 
         public float CalcularPrecio() 
         {
-            float a;
+            float a=0;
             return a;
         }
     }
-    public class Prendas
+    public class Prenda
     {
         public float PrecioBase { get; set; }
-        public int Tipo { get; set; } //enum
-        public int Estado  { get; set; } //enum
+        public int Tipo { get; set; } 
+        public int Estado  { get; set; } 
         public int Cantidad { get; set; }
     }
 }
